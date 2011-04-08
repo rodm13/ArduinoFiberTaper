@@ -2,10 +2,11 @@
 
 Servo servo;
 int servoPin = 9;
-int startTime = 0;
-int finishTime = 0;
+double startTime = 0;
+double finishTime = 0;
 int thousands, hundreds, tens, ones;
-int finalSpeed, reverseFinalSpeed, reverseStartTime;
+int finalSpeed, reverseFinalSpeed;
+double reverseStartTime;
 
 void setup() {
   servo.attach(servoPin);  
