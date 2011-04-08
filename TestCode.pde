@@ -32,6 +32,7 @@ void loop() {
             servo.writeMicroseconds(reverseFinalSpeed);
           }
           servo.writeMicroseconds(1500);
+          Serial.flush();
           break;
           
 	case '-':
