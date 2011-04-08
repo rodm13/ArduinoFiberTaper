@@ -5,7 +5,7 @@ int servoPin = 9;
 int startTime = 0;
 int finishTime = 0;
 int thousands, hundreds, tens, ones;
-int finalSpeed;
+int finalSpeed, reverseFinalSpeed, reverseStartTime;
 
 void setup() {
   servo.attach(servoPin);  
@@ -23,15 +23,24 @@ void loop() {
     char ch = Serial.peek();
     
     switch(ch) {
-      
+        
+        case '+':
+          Serial.println("Rewinding...");
+          reverseFinalSpeed = 1500 + 1500 - finalSpeed;
+          reverseStartTime = millis();
+          while ( millis() - reverseStartTime < finishTime ) {
+            servo.writeMicroseconds(reverseFinalSpeed);
+          }
+          servo.writeMicroseconds(1500);
+          break;
+          
 	case '-':
 	  servo.writeMicroseconds(1500);
           Serial.println("Servo Stopped. Time elapsed in ms:");
           finishTime = millis() - startTime;
           Serial.println(finishTime);
-          startTime = 0;
-          finishTime = 0;
           Serial.flush();
+          Serial.println("Press + to rewind");
 	  break;
 
         default:
@@ -50,4 +59,3 @@ void loop() {
     }
   }
 }  
-
