@@ -1,0 +1,19 @@
+
+Current iteration of the code is built using the Arduino IDE and is used in testing PWM values for the tapering board.  Later revisions will take serial input from the included LabView code to further abstract the user from the code.
+
+---
+
+This is code to drive a fiber tapering device as created for the Spring 2011 batch of senior design projects at Southern Methodist University.
+
+Code assumes the use of a continuous rotation servo on digital pin 9 of the arduino board (Arduino Uno) as well as a custom fiber tapering device (although the algorithms should be portable).
+
+
+Feel free to e-mail (project owner's username) at gmail dot com for details on the setup if you would like to create a fiber tapering device using our specifications.
+
+---
+
+This code is (C) 2011 Rod Meikle and Paul Coroneos
+Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
+SMU Senior Design, Spring 2011
+Tapered Fiber Puller project team
