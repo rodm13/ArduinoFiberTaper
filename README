@@ -1,5 +1,5 @@
 
-Current iteration of the code is built using the Arduino IDE and is used in testing PWM values for the tapering board.  Later revisions will take serial input from the included LabView code to further abstract the user from the code.
+The current revision of the code accepts values from a LabVIEW GUI frontend and passes them over a serial USB interface to an Arduino connected to a fiber tapering device.  The only user configuration needed for the GUI is setting the serial port used by the Arduino USB-serial interface.
 
 ---
 
