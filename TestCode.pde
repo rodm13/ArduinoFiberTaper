@@ -10,6 +10,8 @@ double reverseStartTime;
 char ch;
 int nextnum = 1;
 
+double timeToTaper = 8000;
+
 void setup() {
   servo.attach(servoPin);
   Serial.begin(9600);
@@ -41,6 +43,17 @@ void loop() {
         break;
         
       case '-':
+        servo.writeMicroseconds(1500);
+        Serial.print("Taper finished. Time elapsed in ms: ");
+        finishTime = millis() - startTime;
+        Serial.println(finishTime);
+        Serial.flush();
+        Serial.println("Press + to rewind");
+        break;
+      
+      case '*':
+        while ( millis() - startTime < timeToTaper ) {
+        ; }
         servo.writeMicroseconds(1500);
         Serial.print("Taper finished. Time elapsed in ms: ");
         finishTime = millis() - startTime;

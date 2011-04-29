@@ -1,6 +1,8 @@
 
 The current revision of the code accepts values from a LabVIEW GUI frontend and passes them over a serial USB interface to an Arduino connected to a fiber tapering device.  The only user configuration needed for the GUI is setting the serial port used by the Arduino USB-serial interface.
 
+This is the final revision of the semester, no further changes will be made explicitly as part of the Senior Design project class.
+
 ---
 
 This is code to drive a fiber tapering device as created for the Spring 2011 batch of senior design projects at Southern Methodist University.
